@@ -1,5 +1,7 @@
 package com.qa.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,10 @@ public class ToDoService {
 	
 	public ListItem createListItem(ListItem listItem) {
 		return this.repo.save(listItem);
+	}
+	
+	public List<ListItem> getAllListItems(){
+		return this.repo.findAll();
 	}
 
 }
