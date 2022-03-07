@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +48,17 @@ public class ToDoListController {
 	@PutMapping("/update/{id}")
 	public ResponseEntity<ListItem> updateList(@PathVariable int id, @RequestBody ListItem listItem) {
 		return new ResponseEntity<ListItem>(this.service.updateListItem(id, listItem), HttpStatus.ACCEPTED);
+	}
+	
+	//========== DELETE ==========
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Boolean> deleteItem(@PathVariable int id){
+		boolean hasDeleted = this.service.deleteListItem(id);
+		if(!hasDeleted) {
+			return new ResponseEntity<Boolean>(this.service.deleteListItem(id), HttpStatus.ACCEPTED);
+		}else {
+			return new ResponseEntity<Boolean>(hasDeleted, HttpStatus.METHOD_NOT_ALLOWED);
+		}
 	}
 
 }
