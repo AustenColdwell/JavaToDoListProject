@@ -56,6 +56,11 @@ public class ToDoListController {
 		return new ResponseEntity<ListItem>(this.service.updateListTitle(id, listItem), HttpStatus.ACCEPTED);
 	}
 	
+	@PatchMapping("/updateDescription/{id}")
+	public ResponseEntity<ListItem> updateDescription(@PathVariable int id, @RequestBody ListItem listItem){
+		return new ResponseEntity<ListItem>(this.service.updateListDescription(id, listItem), HttpStatus.ACCEPTED);
+	}
+	
 	//========== DELETE ==========
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteItem(@PathVariable int id){
