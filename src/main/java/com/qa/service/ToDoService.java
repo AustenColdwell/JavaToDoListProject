@@ -50,6 +50,14 @@ public class ToDoService {
 		return this.repo.save(foundItem);
 	}
 	
+	public ListItem updateListTitle(int id, ListItem listItem) {
+		ListItem foundItem = this.getById(id);
+		
+		foundItem.setTitle(listItem.getTitle());
+		
+		return this.repo.save(foundItem);
+	}
+	
 	public boolean deleteListItem(int id) {
 		this.repo.deleteById(id);
 		return !this.repo.existsById(id);
