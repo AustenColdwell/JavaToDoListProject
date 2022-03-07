@@ -66,6 +66,22 @@ public class ToDoService {
 		return this.repo.save(foundItem);
 	}
 	
+	public ListItem updateListDeadline(int id, ListItem listItem) {
+		ListItem foundItem = this.getById(id);
+		
+		foundItem.setDeadline(listItem.getDeadline());
+		
+		return this.repo.save(foundItem);
+	}
+	
+	public ListItem updateListPriority(int id, ListItem listItem) {
+		ListItem foundItem = this.getById(id);
+		
+		foundItem.setPriority(listItem.getPriority());
+		
+		return this.repo.save(foundItem);
+	}
+	
 	public boolean deleteListItem(int id) {
 		this.repo.deleteById(id);
 		return !this.repo.existsById(id);
