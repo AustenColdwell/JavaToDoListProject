@@ -38,5 +38,16 @@ public class ToDoService {
 			throw new ItemNotFoundException("Item not found");
 		}
 	}
+	
+	public ListItem updateListItem(int id, ListItem listItem) {
+		ListItem foundItem = this.getById(id);
+		
+		foundItem.setTitle(listItem.getTitle());
+		foundItem.setDescription(listItem.getDescription());
+		foundItem.setDeadline(listItem.getDeadline());
+		foundItem.setPriority(listItem.getPriority());
+		
+		return this.repo.save(foundItem);
+	}
 
 }
