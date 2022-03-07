@@ -1,4 +1,4 @@
-package com.qa.Exception;
+package com.qa.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
