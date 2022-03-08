@@ -45,6 +45,16 @@ public class ToDoListController {
 		return new ResponseEntity<ListItem>(this.service.getById(id), HttpStatus.OK);
 	}
 	
+	@GetMapping("/getByTitle/{title}")
+	public ResponseEntity<List<ListItem>> getItemByTitle(@PathVariable String title){
+		return new ResponseEntity<List<ListItem>>(this.service.getListItemByTitle(title), HttpStatus.OK);
+	}
+	
+	@GetMapping("/getByPriority/{limit}")
+	public ResponseEntity<List<ListItem>> getItemByPriority(@PathVariable int limit){
+		return new ResponseEntity<List<ListItem>>(this.service.getListItemByPriority(limit), HttpStatus.OK);
+	}
+	
 	//========== UPDATE ==========
 	@PutMapping("/update/{id}")
 	public ResponseEntity<ListItem> updateList(@PathVariable int id, @RequestBody ListItem listItem) {
