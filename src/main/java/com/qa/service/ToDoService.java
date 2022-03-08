@@ -21,10 +21,12 @@ public class ToDoService {
 		this.repo = repo;
 	}
 	
+	//========================= CREATE =========================\\
 	public ListItem createListItem(ListItem listItem) {
 		return this.repo.save(listItem);
 	}
 	
+	//========================= READ =========================\\
 	public List<ListItem> getAllListItems(){
 		return this.repo.findAll();
 	}
@@ -39,6 +41,15 @@ public class ToDoService {
 		}
 	}
 	
+	public List<ListItem> getListItemByTitle(String title){
+		return this.repo.findListItemByTitle(title);
+	}
+	
+	public List<ListItem> getListItemByPriority(int limit){
+		return this.repo.findListItemByPriority(limit);
+	}
+	
+	//========================= UPDATE =========================\\
 	public ListItem updateListItem(int id, ListItem listItem) {
 		ListItem foundItem = this.getById(id);
 		
@@ -82,6 +93,7 @@ public class ToDoService {
 		return this.repo.save(foundItem);
 	}
 	
+	//========================= DELETE =========================\\
 	public boolean deleteListItem(int id) {
 		this.repo.deleteById(id);
 		return !this.repo.existsById(id);
