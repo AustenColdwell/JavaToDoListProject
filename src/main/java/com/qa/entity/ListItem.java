@@ -25,6 +25,14 @@ public class ListItem {
 	public ListItem() {
 		
 	}
+	
+	public ListItem(int id, String title, String description, String deadline, int priority) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.deadline = deadline;
+		this.priority = priority;
+	}
 
 	public ListItem(String title, String description, String deadline, int priority) {
 		this.title = title;
