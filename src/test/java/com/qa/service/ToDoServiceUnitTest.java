@@ -190,4 +190,16 @@ public class ToDoServiceUnitTest {
 		
 	}
 	
+	@Test
+	void deleteTest() {
+		int id = 1;
+		
+		Mockito.when(this.repo.existsById(id)).thenReturn(false);
+		
+		assertThat(this.service.deleteListItem(id)).isEqualTo(true);
+		
+		Mockito.verify(this.repo, Mockito.times(1)).deleteById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).existsById(Mockito.anyInt());
+	}
+	
 }
