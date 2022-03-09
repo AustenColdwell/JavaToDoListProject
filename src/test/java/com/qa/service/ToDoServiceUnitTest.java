@@ -53,6 +53,7 @@ public class ToDoServiceUnitTest {
 		assertThat(this.service.getAllListItems()).isEqualTo(listItem);
 		//verify
 		Mockito.verify(this.repo, Mockito.times(1)).findAll();
+		
 	}
 	
 	@Test
@@ -99,5 +100,94 @@ public class ToDoServiceUnitTest {
 		Mockito.verify(this.repo, Mockito.times(1)).findListItemByPriority(Mockito.anyInt());
 		
 	}
-
+	
+	@Test
+	void updateListTest() {
+		
+		int id = 1;
+		ListItem foundListItem = new ListItem(1, "test", "test", "test", 5);
+		ListItem savedListItem = new ListItem("saved", "saved", "saved", 5);
+		
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(foundListItem));
+		Mockito.when(this.repo.save(foundListItem)).thenReturn(savedListItem);
+		
+		assertThat(this.service.getById(id)).isEqualTo(foundListItem);
+		assertThat(this.service.updateListItem(id, foundListItem)).isEqualTo(savedListItem);
+		
+		Mockito.verify(this.repo, Mockito.times(2)).findById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(ListItem.class));
+	}
+	
+	@Test
+	void updateListTitleTest() {
+		
+		int id = 1;
+		ListItem foundListItem = new ListItem(1, "test", "test", "test", 5);
+		ListItem savedListItem = new ListItem("saved", "saved", "saved", 5);
+		
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(foundListItem));
+		Mockito.when(this.repo.save(foundListItem)).thenReturn(savedListItem);
+		
+		assertThat(this.service.getById(id)).isEqualTo(foundListItem);
+		assertThat(this.service.updateListTitle(id, foundListItem)).isEqualTo(savedListItem);
+		
+		Mockito.verify(this.repo, Mockito.times(2)).findById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(ListItem.class));
+		
+	}
+	
+	@Test
+	void updateListDescriptionTest() {
+		
+		int id = 1;
+		ListItem foundListItem = new ListItem(1, "test", "test", "test", 5);
+		ListItem savedListItem = new ListItem("saved", "saved", "saved", 5);
+		
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(foundListItem));
+		Mockito.when(this.repo.save(foundListItem)).thenReturn(savedListItem);
+		
+		assertThat(this.service.getById(id)).isEqualTo(foundListItem);
+		assertThat(this.service.updateListDescription(id, foundListItem)).isEqualTo(savedListItem);
+		
+		Mockito.verify(this.repo, Mockito.times(2)).findById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(ListItem.class));
+		
+	}
+	
+	@Test
+	void updateListDeadlineTest() {
+		
+		int id = 1;
+		ListItem foundListItem = new ListItem(1, "test", "test", "test", 5);
+		ListItem savedListItem = new ListItem("saved", "saved", "saved", 5);
+		
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(foundListItem));
+		Mockito.when(this.repo.save(foundListItem)).thenReturn(savedListItem);
+		
+		assertThat(this.service.getById(id)).isEqualTo(foundListItem);
+		assertThat(this.service.updateListDeadline(id, foundListItem)).isEqualTo(savedListItem);
+		
+		Mockito.verify(this.repo, Mockito.times(2)).findById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(ListItem.class));
+		
+	}
+	
+	@Test
+	void updateListPriorityTest() {
+		
+		int id = 1;
+		ListItem foundListItem = new ListItem(1, "test", "test", "test", 5);
+		ListItem savedListItem = new ListItem("saved", "saved", "saved", 5);
+		
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(foundListItem));
+		Mockito.when(this.repo.save(foundListItem)).thenReturn(savedListItem);
+		
+		assertThat(this.service.getById(id)).isEqualTo(foundListItem);
+		assertThat(this.service.updateListPriority(id, foundListItem)).isEqualTo(savedListItem);
+		
+		Mockito.verify(this.repo, Mockito.times(2)).findById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(ListItem.class));
+		
+	}
+	
 }
