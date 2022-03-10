@@ -1,7 +1,9 @@
 package com.qa.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -118,6 +120,81 @@ public class ToDoListControllerIntegrationTest {
 		
 		ResultMatcher responseStatus = status().isOk();
 		ResultMatcher responseContent = content().json(savedListItemsJSON);
+		
+		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
+		
+	}
+	
+	@Test
+	void updateListItem() throws Exception{
+		
+		ListItem savedListItem = new ListItem(1, "test title one", "test description one", "test date one", 3);
+		String savedListItemJSON = this.mapper.writeValueAsString(savedListItem);
+		
+		RequestBuilder request = put("/update/1").contentType(MediaType.APPLICATION_JSON).content(savedListItemJSON);
+		
+		ResultMatcher responseStatus = status().isAccepted();
+		ResultMatcher responseContent = content().json(savedListItemJSON);
+		
+		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
+		
+	}
+	
+	@Test
+	void updateTitle() throws Exception{
+		
+		ListItem savedListItem = new ListItem(1, "test title one", "test description one", "test date one", 3);
+		String savedListItemJSON = this.mapper.writeValueAsString(savedListItem);
+		
+		RequestBuilder request = patch("/updateTitle/1").contentType(MediaType.APPLICATION_JSON).content(savedListItemJSON);
+		
+		ResultMatcher responseStatus = status().isAccepted();
+		ResultMatcher responseContent = content().json(savedListItemJSON);
+		
+		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
+		
+	}
+	
+	@Test
+	void updateDescription() throws Exception{
+		
+		ListItem savedListItem = new ListItem(1, "test title one", "test description one", "test date one", 3);
+		String savedListItemJSON = this.mapper.writeValueAsString(savedListItem);
+		
+		RequestBuilder request = patch("/updateDescription/1").contentType(MediaType.APPLICATION_JSON).content(savedListItemJSON);
+		
+		ResultMatcher responseStatus = status().isAccepted();
+		ResultMatcher responseContent = content().json(savedListItemJSON);
+		
+		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
+		
+	}
+	
+	@Test
+	void updateDeadline() throws Exception{
+		
+		ListItem savedListItem = new ListItem(1, "test title one", "test description one", "test date one", 3);
+		String savedListItemJSON = this.mapper.writeValueAsString(savedListItem);
+		
+		RequestBuilder request = patch("/updateDeadline/1").contentType(MediaType.APPLICATION_JSON).content(savedListItemJSON);
+		
+		ResultMatcher responseStatus = status().isAccepted();
+		ResultMatcher responseContent = content().json(savedListItemJSON);
+		
+		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
+		
+	}
+	
+	@Test
+	void updatePriority() throws Exception{
+		
+		ListItem savedListItem = new ListItem(1, "test title one", "test description one", "test date one", 3);
+		String savedListItemJSON = this.mapper.writeValueAsString(savedListItem);
+		
+		RequestBuilder request = patch("/updatePriority/1").contentType(MediaType.APPLICATION_JSON).content(savedListItemJSON);
+		
+		ResultMatcher responseStatus = status().isAccepted();
+		ResultMatcher responseContent = content().json(savedListItemJSON);
 		
 		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
 		
