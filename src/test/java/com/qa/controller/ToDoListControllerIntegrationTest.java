@@ -4,6 +4,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -21,6 +22,7 @@ import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.entity.ListItem;
@@ -198,6 +200,13 @@ public class ToDoListControllerIntegrationTest {
 		
 		this.mock.perform(request).andExpect(responseStatus).andExpect(responseContent);
 		
+	}
+	
+	@Test
+	void delete() throws Exception{
+		RequestBuilder request = MockMvcRequestBuilders.delete("/delete/1");
+		ResultMatcher responseStatus = status().isMethodNotAllowed();
+		this.mock.perform(request).andExpect(responseStatus);
 	}
 
 }
