@@ -31,7 +31,7 @@ public class ToDoListController {
 	//========== CREATE ==========
 	@PostMapping("/create")
 	public ResponseEntity<ListItem> createItem(@RequestBody ListItem listItem){
-		return new ResponseEntity<ListItem>(this.service.createListItem(listItem), HttpStatus.ACCEPTED);
+		return new ResponseEntity<ListItem>(this.service.createListItem(listItem), HttpStatus.CREATED);
 	}
 	
 	//========== READ ==========
