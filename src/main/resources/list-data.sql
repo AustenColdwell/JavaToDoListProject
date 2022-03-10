@@ -1,0 +1,3 @@
+insert into list_item (deadline, description, priority, title) values ('test date one', 'test description one', 3, 'test title one')
+insert into list_item (deadline, description, priority, title) values ('test date two', 'test description two', 3, 'test title two')
+insert into list_item (deadline, description, priority, title) values ('test date three', 'test description three', 3, 'test title three')
