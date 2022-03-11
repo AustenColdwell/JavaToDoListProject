@@ -2,6 +2,10 @@
 
 A basic backend application made in Spring Boot
 
+# Link to my Jira board
+
+https://austencoldwell.atlassian.net/jira/software/projects/DFES/boards/5
+
 # Why are we doing this?
 
 This project was assigned to me during my training at QA. The goal of the project is to create a Spring Boot API, with utilisation of supporting tools, methodologies, and technologies, that encapsulates all fundamental and practical modules covered during training.
@@ -17,6 +21,37 @@ In this project I found working on the CRUD functionality to be a clear process 
 # Possible improvements for future revisions of the project
 
 My revisions would be to include a front end to the project.
+
+# Risk assessment
+
+| risk | statement | response | objective | likelihood | impact | risk level |
+|------|-----------|----------|-----------|------------|--------|------------|
+| strain injuries | Using a computer<br>for long periods<br>of time can<br>cause strain injuries| take small<br>breaks | improve comfort | likely | insignificant | 4 |
+| connection issues | possible internet<br>outage during project | Try not to<br>rely on online<br>resources | reduce down time | possible | negligible | 4 |
+| eye fatigue |Using a computer<br>for long periods<br>of time can<br>cause headaches | take small<br>breaks | improve comfort | possible | insignificant | 4 |
+| issues with code | it's possible<br>to create bugs<br>in my code | find help online<br>or through my tutor | solve problems | likely | negligible | 6 |
+| faulty hardware | it's possible my PC<br>could break | make regular commits | decrease risk to project | rare | significant | 5 |
+
+|               | insignificant | negligible | moderate | extensive | significant |
+|---------------|---------------|------------|----------|-----------|-------------|
+| almost certain | 5 | 7 | 8 | 9 | 10 |
+| likely | 4 | 6 | 7 | 8 | 9 |
+| possible | 3 | 4 | 6 | 7 | 8 |
+| unlikely | 2 | 3 | 4 | 6 | 7 |
+| rare | 1 | 2 | 3 | 4 | 5 |
+
+# Getting started
+
+To run the project, download the .jar file that's inside the target folder, and run it from the terminal.
+Below in the screenshots section are an example of how you can make the Postman requests.
+
+The application is set-up to use localhost:8080.
+
+NOTE: GetByPriority requires a limit number to be passed through the URL.
+
+# Screenshot showing test coverage
+
+![Coverage](https://user-images.githubusercontent.com/97603538/157842629-a0f6a734-2f69-4a4a-9007-3689282fba5b.PNG)
 
 # Screenshots showing my Postman requests and the output from the API
 
@@ -40,25 +75,26 @@ My revisions would be to include a front end to the project.
 ![GetAllOutput](https://user-images.githubusercontent.com/97603538/157719691-c0eb2752-564e-4800-b0eb-d75dc62eaccd.PNG)
 ![GetAllH2](https://user-images.githubusercontent.com/97603538/157719718-79b285e8-a68e-416e-9ad7-3ab84108d476.PNG)
 
+---
 
 #### GetById(READ)
 
 ![GetByIdPostman](https://user-images.githubusercontent.com/97603538/157719813-392abc56-5f95-41d9-b992-1b33975da613.PNG)
 ![GetByIdOutput](https://user-images.githubusercontent.com/97603538/157719826-b1fd2017-f27a-48d5-bf41-ed4053297d98.PNG)
 ![GetByIdH2](https://user-images.githubusercontent.com/97603538/157719842-0ba0d5b0-3210-4bfc-95bd-419e70da79bb.PNG)
-
+---
 #### GetByPriority(READ)
 
 ![GetByPriorityPostman](https://user-images.githubusercontent.com/97603538/157719907-7bd7d934-4c4a-43c9-bf8d-e305829a2a43.PNG)
 ![GetByPriorityOutput](https://user-images.githubusercontent.com/97603538/157719996-605f0264-da6a-480a-86f0-5ac59345e887.PNG)
 ![GetByPriorityH2](https://user-images.githubusercontent.com/97603538/157720016-72daf78f-3bb6-48a0-a359-27959e684f23.PNG)
-
+---
 #### GetByTitle(READ)
 
 ![GetByTitlePostman](https://user-images.githubusercontent.com/97603538/157720112-db517289-26c1-4c16-be3f-1cafc05ac7af.PNG)
 ![GetByTitleOutput](https://user-images.githubusercontent.com/97603538/157720130-50723809-3238-4aea-929a-ba1e0c3d3e54.PNG)
 ![GetByTitleH2](https://user-images.githubusercontent.com/97603538/157720151-688abd99-a5d3-44f2-b8f0-ca6e13ce0792.PNG)
-
+---
 ### UPDATE
 ---
 
@@ -67,25 +103,25 @@ My revisions would be to include a front end to the project.
 ![UpdatePostman](https://user-images.githubusercontent.com/97603538/157720277-e2cf1f81-f6e8-4eb6-be79-a0f48604aac6.PNG)
 ![UpdateOutput](https://user-images.githubusercontent.com/97603538/157720297-b190a8cd-a764-45cc-9a5b-13cd3de840db.PNG)
 ![UpdateH2](https://user-images.githubusercontent.com/97603538/157720314-b36e2496-6132-4922-adba-9bdd4e9c8c6e.PNG)
-
+---
 #### UpdateDeadline(UPDATE)
 
 ![UpdateDeadlinePostman](https://user-images.githubusercontent.com/97603538/157720414-258a05ef-b2e4-42db-a673-99fc87d2ca43.PNG)
 ![UpdateDeadlineOutput](https://user-images.githubusercontent.com/97603538/157720421-f3747880-b775-40eb-ac0e-6e93fd1133e2.PNG)
 ![UpdateDeadlineH2](https://user-images.githubusercontent.com/97603538/157720434-604fc5a5-b793-40be-8093-debae733f199.PNG)
-
+---
 #### UpdateDescription(UPDATE)
 
 ![UpdateDescriptionPostman](https://user-images.githubusercontent.com/97603538/157720565-5a46c49e-8aee-40df-a353-bb35fa1798cb.PNG)
 ![UpdateDescriptionOutput](https://user-images.githubusercontent.com/97603538/157720576-53c8fda7-5364-46a0-8b40-645d4bcecd16.PNG)
 ![UpdateDescriptionH2](https://user-images.githubusercontent.com/97603538/157720588-ce9c2532-d3fd-4eb0-8856-2e9b94498ff3.PNG)
-
+---
 #### UpdatePriority(UPDATE)
 
 ![UpdatePriorityPostman](https://user-images.githubusercontent.com/97603538/157720683-f9fd54a8-b876-42fe-8589-c6f929cb9c5a.PNG)
 ![UpdatePriorityOutput](https://user-images.githubusercontent.com/97603538/157720692-1e2d5acc-e765-4064-b9c4-d7529110a40d.PNG)
 ![UpdatePriorityH2](https://user-images.githubusercontent.com/97603538/157720697-a963b310-f87d-4a2b-8b98-3dae132d95a8.PNG)
-
+---
 #### UpdateTitle(UPDATE)
 
 ![UpdateTitlePostman](https://user-images.githubusercontent.com/97603538/157720810-40b261b1-2b03-4fa5-bc29-2d0b71795301.PNG)
@@ -118,25 +154,25 @@ My revisions would be to include a front end to the project.
 ![GetAllPostman](https://user-images.githubusercontent.com/97603538/157722030-c2dad491-accc-4457-90b0-a5c736947eb5.PNG)
 ![GetAllOutput](https://user-images.githubusercontent.com/97603538/157722039-d2938176-8849-4451-838d-7bd45603b633.PNG)
 ![GetAllSQL](https://user-images.githubusercontent.com/97603538/157722065-a3e90f8d-df20-41ad-9bf9-79c376c89a24.PNG)
-
+---
 #### GetById(READ)
 
 ![GetByIdPostman](https://user-images.githubusercontent.com/97603538/157722087-ed9e11f7-f3e0-471a-9838-e3e28e194ca4.PNG)
 ![GetByIdOutput](https://user-images.githubusercontent.com/97603538/157722094-2801e65d-28a1-4711-aab4-bc5b853d1138.PNG)
 ![GetByIdSQL](https://user-images.githubusercontent.com/97603538/157722120-52497b48-2f68-496e-9a91-6bd9382896e5.PNG)
-
+---
 #### GetBYPriority(READ)
 
 ![GetByPriorityPostman](https://user-images.githubusercontent.com/97603538/157722159-85c267af-5dfd-4e78-a039-d21a9f1ae5d1.PNG)
 ![GetByPriorityOutput](https://user-images.githubusercontent.com/97603538/157722175-71883426-38ac-40b8-a115-6578b7f59fbe.PNG)
 ![GetByPrioritySQL](https://user-images.githubusercontent.com/97603538/157722187-f40bfd2f-e2d1-4518-be54-14c3c0aece80.PNG)
-
+---
 #### GetByTitle(READ)
 
 ![GetByTitlePostman](https://user-images.githubusercontent.com/97603538/157722228-24d72dc2-1717-4882-a3b3-03bf8cf8a4e2.PNG)
 ![GetByTitleOutput](https://user-images.githubusercontent.com/97603538/157722240-27ec3b36-f999-4ec3-913a-4c5e215b2091.PNG)
 ![GetByTitleSQL](https://user-images.githubusercontent.com/97603538/157722253-0d2761a1-1108-4b91-81d0-ff6069fd8e3b.PNG)
-
+---
 ### UPDATE
 ---
 
@@ -145,19 +181,19 @@ My revisions would be to include a front end to the project.
 ![UpdateDeadlinePostman](https://user-images.githubusercontent.com/97603538/157722512-69c98f19-7a13-468c-b86b-0ed4afeee2f6.PNG)
 ![UpdateDeadlineOutput](https://user-images.githubusercontent.com/97603538/157722522-ceda0cd3-2a79-40df-8e9b-cbf8d210d4ae.PNG)
 ![UpdateDeadlineSQL](https://user-images.githubusercontent.com/97603538/157722530-3dc62aff-cb5c-4337-9494-6abad9dc5f2a.PNG)
-
+---
 #### UpdateDescription(UPDATE)
 
 ![UpdateDescriptionPostman](https://user-images.githubusercontent.com/97603538/157722558-8e3dda43-2b08-4dbb-83f5-9be3d4631c31.PNG)
 ![UpdateDescriptionOutput](https://user-images.githubusercontent.com/97603538/157722568-c1a9069b-685e-4d8c-add4-b0a4f8ec730c.PNG)
 ![UpdateDescriptionSQL](https://user-images.githubusercontent.com/97603538/157722578-931769d7-9ed7-4714-958c-f15f24c2cbb9.PNG)
-
+---
 #### UpdatePriority(UPDATE)
 
 ![UpdatePriorityPostman](https://user-images.githubusercontent.com/97603538/157722612-42863fb1-6f43-4ef2-94ec-cdb15f53574c.PNG)
 ![UpdatePriorityOutput](https://user-images.githubusercontent.com/97603538/157722619-319e9f93-bfb6-4d8c-80be-11905240d65c.PNG)
 ![UpdatePrioritySQL](https://user-images.githubusercontent.com/97603538/157722640-1055faad-9c65-4888-8f6c-b7095f8b27a0.PNG)
-
+---
 #### UpdateTitle(UPDATE)
 
 ![UpdateTitlePostman](https://user-images.githubusercontent.com/97603538/157722658-4a71a67f-a692-4f2e-bcb3-f6cde7b74ab3.PNG)
